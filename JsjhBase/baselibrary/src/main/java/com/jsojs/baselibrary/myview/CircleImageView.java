@@ -36,7 +36,7 @@ import android.support.annotation.DrawableRes;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-import com.jsojs.jsjhbase.R;
+import com.jsojs.baselibrary.R;
 
 
 public class CircleImageView extends ImageView {
