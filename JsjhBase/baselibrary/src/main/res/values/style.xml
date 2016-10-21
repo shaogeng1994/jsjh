@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="progressStyle" parent="android:style/Widget.ProgressBar">
+        <item name="android:indeterminateDrawable">@anim/progressbar</item>
+        <item name="android:minWidth">50dp</item>
+        <item name="android:maxWidth">50dp</item>
+        <item name="android:minHeight">50dp</item>
+        <item name="android:maxHeight">50dp</item>
+    </style>
+    <style name="loading_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/colorGray</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="loading">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:backgroundDimEnabled">true</item> <!-- 模糊 -->
+        <item name="android:windowIsFloating">true</item><!-- 类似windows的弹出Dialog -->
+        <item name="android:windowBackground">@color/transparent</item>   <!-- 背景颜色设置透明-->
+    </style>
+    
+    <style name="ProgressHorizontal">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/progressbar_horizontal</item>
+        <item name="android:indeterminateDrawable">@color/colorPrimary</item>
+        <item name="android:minHeight">@dimen/x10</item>
+        <item name="android:maxHeight">@dimen/x10</item>
+    </style>
+
+    <style name="ProgressHorizontalRushinfo">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/progressbar_horizontal_rushinfo</item>
+        <item name="android:indeterminateDrawable">@color/colorRushInfoTime</item>
+        <item name="android:minHeight">@dimen/x10</item>
+        <item name="android:maxHeight">@dimen/x10</item>
+    </style>
+</resources>
