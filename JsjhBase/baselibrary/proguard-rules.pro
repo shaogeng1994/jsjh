@@ -17,6 +17,7 @@
 #}
 
 -keep class com.alibaba.fastjson.** { *; }
+-keep class com.jsojs.baselibrary.**{ *;}
 -dontwarn org.apache.http.**
 -dontwarn android.webkit.**
 -keep class org.apache.http.** { *; }
