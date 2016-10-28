@@ -50,4 +50,5 @@ dependencies {
     compile files('src/main/libs/httpmime-4.3.6.jar')
     compile files('src/main/libs/httpcore-4.3.3.jar')
     compile files('src/main/libs/httpclient-4.3.6.jar')
+    compile files('src/main/libs/Bughd_android_sdk_v1.3.7.jar')
 }

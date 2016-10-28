@@ -25,3 +25,4 @@
 -keep class org.apache.commons.logging.** { *; }
 -keep class android.net.compatibility.** { *; }
 -keep class android.net.http.** { *; }
+-keep class im.fir.sdk.** {*;}
