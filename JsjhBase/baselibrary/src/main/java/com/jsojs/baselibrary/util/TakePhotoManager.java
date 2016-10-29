@@ -28,7 +28,7 @@ import java.io.FileNotFoundException;
 
 public class TakePhotoManager {
     //保存图片本地路径
-    public static final String ACCOUNT_DIR = Environment.getDataDirectory().getPath();
+    public static final String ACCOUNT_DIR = Environment.getExternalStorageDirectory().getPath()+"/jsojs/";
     public static final String ACCOUNT_MAINTRANCE_ICON_CACHE = "icon_cache/";
     private static final String IMGPATH = ACCOUNT_DIR + ACCOUNT_MAINTRANCE_ICON_CACHE;
 
