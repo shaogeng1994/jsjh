@@ -198,7 +198,7 @@ public class UpdateManager {
         /* 结束时的UI线程 */
         @Override
         protected void onPostExecute(String result) {
-            ((Activity)context).dismissDialog(0);
+//            ((Activity)context).dismissDialog(0);
             super.onPostExecute(result);
         }
 
@@ -207,6 +207,7 @@ public class UpdateManager {
         @Override
         protected void onProgressUpdate(String... values) {
 /* 进度显示 */
+            if(pdialog!=null)
             pdialog.setProgress(Integer.parseInt(values[0]));
         }
 
