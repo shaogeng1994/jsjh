@@ -96,6 +96,7 @@ public class CopyDB {
             city.setUid(cursor.getString(4));
             list.add(city);
         }
+        db.close();
         return list;
     }
 
@@ -125,6 +126,7 @@ public class CopyDB {
             cursor = db.rawQuery("select * from jsjh_district where id='"+city.getUid()+"'", null);
             cursor.moveToFirst();
         }
+        db.close();
         return list;
     }
 }
