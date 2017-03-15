@@ -8,7 +8,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Environment;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 
@@ -39,8 +41,9 @@ public class UpdateManager {
     private static String fileName;
     private Context context;
     private ProgressDialog pdialog;
+    private String providerAuthorities;
 
-    private UpdateManager(String firToken,int oldVersion,String fileName) {
+    private UpdateManager(String firToken, int oldVersion, String fileName) {
         this.firToken =firToken;
         this.oldVersion = oldVersion;
         this.fileName = fileName;
@@ -56,6 +59,10 @@ public class UpdateManager {
 
     public static UpdateManager getInstance() {
         return instance;
+    }
+
+    public void setProviderAuthorities(String providerAuthorities) {
+        this.providerAuthorities = providerAuthorities;
     }
 
     public static void checkUpdate() {
@@ -131,8 +138,19 @@ public class UpdateManager {
         Intent intent = new Intent();
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.setAction(android.content.Intent.ACTION_VIEW);
-        intent.setDataAndType(Uri.fromFile(file),
-                "application/vnd.android.package-archive");
+        if (Build.VERSION.SDK_INT >= 24) {
+            Uri uri;
+            if (providerAuthorities == null) {
+                uri = FileProvider.getUriForFile(context, "com.jsojs.baselibrary.fileprovider", file);
+            } else {
+                uri = FileProvider.getUriForFile(context, providerAuthorities, file);
+            }
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            intent.setDataAndType(uri, "application/vnd.android.package-archive");
+        } else {
+            intent.setDataAndType(Uri.fromFile(file),
+                    "application/vnd.android.package-archive");
+        }
         context.startActivity(intent);
     }
 
