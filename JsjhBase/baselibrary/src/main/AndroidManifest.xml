@@ -4,8 +4,8 @@
     <application android:allowBackup="true" android:label="@string/app_name"
         android:supportsRtl="true">
         <provider
-            android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.jsojs.baselibrary.fileprovider"
+            android:name=".util.UpdateFileProvider"
+            android:authorities="com.jsojs.baselibrary.updatefileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
